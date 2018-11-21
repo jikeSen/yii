@@ -1,0 +1,178 @@
+{
+    "swagger": "2.0",
+    "paths": {
+        "/v1/accounts/login": {
+            "post": {
+                "tags": [
+                    "\u7528\u6237\u767b\u5f55\u670d\u52a1"
+                ],
+                "summary": "openid\u767b\u5f55",
+                "description": "\u767b\u5f55",
+                "operationId": "login",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "openId",
+                        "in": "query",
+                        "description": "\u7528\u6237openid",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "md5\u5bc6\u7801",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "\u8bf7\u6c42\u6210\u529f"
+                    },
+                    "401": {
+                        "description": "\u672a\u6388\u6743"
+                    },
+                    "404": {
+                        "description": "\u7528\u6237\u4e0d\u5b58\u5728"
+                    }
+                }
+            }
+        },
+        "/v1/accounts/info": {
+            "post": {
+                "tags": [
+                    "\u7528\u6237\u767b\u5f55\u670d\u52a1"
+                ],
+                "summary": "\u83b7\u53d6\u7528\u6237\u4fe1\u606f",
+                "description": "\u83b7\u53d6\u7528\u6237\u4fe1\u606f",
+                "operationId": "info",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "openId",
+                        "in": "query",
+                        "description": "\u7528\u6237openid",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "\u8bf7\u6c42\u6210\u529f"
+                    },
+                    "401": {
+                        "description": "\u672a\u6388\u6743"
+                    },
+                    "404": {
+                        "description": "\u7528\u6237\u4e0d\u5b58\u5728"
+                    }
+                }
+            }
+        },
+        "/v1/accounts/update-profile": {
+            "post": {
+                "tags": [
+                    "\u7528\u6237\u767b\u5f55\u670d\u52a1"
+                ],
+                "summary": "\u66f4\u65b0\u7528\u6237\u4fe1\u606f",
+                "description": "\u66f4\u65b0\u7528\u6237\u4fe1\u606f",
+                "operationId": "update-profile",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "openId",
+                        "in": "query",
+                        "description": "\u7528\u6237openid",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "\u8bf7\u6c42\u6210\u529f"
+                    },
+                    "401": {
+                        "description": "\u672a\u6388\u6743"
+                    },
+                    "404": {
+                        "description": "\u7528\u6237\u4e0d\u5b58\u5728"
+                    }
+                }
+            }
+        },
+        "/v1/face/pk": {
+            "post": {
+                "tags": [
+                    "\u4eba\u8138\u8bc6\u522b"
+                ],
+                "summary": "\u989c\u503c\u6253\u5206",
+                "description": "\u6253\u5206\u989c\u503c",
+                "operationId": "pk",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "face_img",
+                        "in": "query",
+                        "description": "\u7528\u6237\u4e0a\u4f20\u7684\u5934\u50cf",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "\u8bf7\u6c42\u6210\u529f"
+                    },
+                    "401": {
+                        "description": "\u672a\u6388\u6743"
+                    },
+                    "404": {
+                        "description": "\u7528\u6237\u4e0d\u5b58\u5728"
+                    }
+                }
+            }
+        },
+        "/v1/face/list-face": {
+            "post": {
+                "tags": [
+                    "\u4eba\u8138\u8bc6\u522b"
+                ],
+                "summary": "\u989c\u503c\u6392\u5e8f",
+                "description": "\u989c\u503c\u6392\u5e8f",
+                "operationId": "pk",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "pageNum",
+                        "in": "query",
+                        "description": "\u9875\u7801\u6570",
+                        "required": true,
+                        "type": "int"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "\u8bf7\u6c42\u6210\u529f"
+                    },
+                    "401": {
+                        "description": "\u672a\u6388\u6743"
+                    },
+                    "404": {
+                        "description": "\u7528\u6237\u4e0d\u5b58\u5728"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
