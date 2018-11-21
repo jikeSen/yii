@@ -1,37 +1,25 @@
 <?php
-$params = array_merge(
-    require __DIR__ . '/../../common/config/params.php',
-    require __DIR__ . '/../../common/config/params-local.php',
-    require __DIR__ . '/params.php',
-    require __DIR__ . '/params-local.php'
-);
 
-return [
-    'id' => 'app-api',
-    'basePath' => dirname(__DIR__),
-    'controllerNamespace' => 'api\controllers',
-    'bootstrap' => ['log'],
-    'modules' => [
-        'v1' => [
-            'basePath' => '@app/modules/v1',
-            'class' => 'api\modules\v1\Module',
-        ],
-    ],
+$config = [
     'components' => [
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
-        ],
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'enableStrictParsing' => false,
-            'rules' => [
-                'class' => 'yii\rest\UrlRule',
-                'controller' => 'v1/account', 'v1/face',
-            ]
+        'request' => [
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'cookieValidationKey' => 'test',
         ],
     ],
-    'params' => $params,
 ];
+
+if (!YII_ENV_TEST) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+    ];
+
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+    ];
+}
+
+return $config;

@@ -1,11 +1,10 @@
 <?php
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');
-ini_set('display_errors',1);
+
 require __DIR__ . '/../../vendor/autoload.php';
 require __DIR__ . '/../../vendor/yiisoft/yii2/Yii.php';
 require __DIR__ . '/../../common/config/bootstrap.php';
-require __DIR__ . '/../../common/unitls/function.php';
 require __DIR__ . '/../config/bootstrap.php';
 
 $config = yii\helpers\ArrayHelper::merge(
