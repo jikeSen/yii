@@ -29,7 +29,7 @@ return [
             'enableStrictParsing' => false,
             'rules' => [
                 'class' => 'yii\rest\UrlRule',
-                'controller' => 'v1/account', 'v1/face' , 'v1/pay',
+                'controller' => 'v1/account', 'v1/face',
             ]
         ],
     ],

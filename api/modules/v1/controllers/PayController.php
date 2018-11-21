@@ -15,6 +15,6 @@ class PayController extends ApiActiveController
 
     public function actionNotify()
     {
-        echo 'success';
+        return ['code' => '200', 'data' => ['success']];
     }
 }
